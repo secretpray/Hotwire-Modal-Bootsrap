@@ -1,0 +1,158 @@
+$btn-close-white-filter: invert(19%) sepia(96%) saturate(7453%) hue-rotate(359deg) brightness(98%) contrast(109%);
+// missing utility function
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// d-none
+.hidden {
+  display: none;
+}
+
+.border-gray {
+  color: #666;
+}
+
+.background-gray {
+  background-color: #212121;
+}
+
+.text-gray {
+  color: #dcdcdc;
+}
+
+.text-gray-600 {
+  color: #6c757d;
+}
+
+.text-gray-700 {
+  color: #495057;
+}
+
+.text-gray-800 {
+  color: #343a40;
+}
+
+
+.text-gray-light {
+  color: #ababab;
+}
+
+.bg-gray-100 {
+ background-color: #f8f9fa;
+}
+.bg-gray-200 {
+ background-color: #e9ecef;
+}
+.bg-gray-300 {
+ background-color: #dee2e6;
+}
+.bg-gray-400 {
+ background-color: #ced4da;
+}
+.bg-gray-500 {
+ background-color: #adb5bd;
+}
+.bg-gray-600 {
+ background-color: #6c757d;
+}
+.bg-gray-700 {
+ background-color: #495057;
+}
+.bg-gray-800 {
+ background-color: #343a40;
+}
+.bg-gray-900 {
+ background-color: #212529;
+}
+
+// Color like Tailwind
+.text-yellow-100 {
+  color: #fff3cd;
+}
+.text-yellow-200 {
+  color: #ffe69c;
+}
+.text-yellow-300 {
+  color: #ffda6a;
+}
+.text-yellow-400 {
+  color: #ffcd39;
+}
+.text-yellow-500 {
+  color: #ffc107;
+}
+.text-yellow-600 {
+  color: #cc9a06;
+}
+.text-yellow-700 {
+  color: #997404;
+}
+.text-yellow-800 {
+  color: #664d03;
+}
+.text-yellow-900 {
+  color: #332701;
+}
+
+.text-yellow-accent {
+  color: #ffb300;
+}
+
+.text-yellow-accent-light {
+  color: #ffecb3;
+}
+
+blockquote {
+  margin: 2rem 0 2rem 2rem !important;
+  padding: 0.4rem 0.8rem;
+  border-left: 0.35rem solid #ffb300;;
+  opacity: 0.8;
+  font-style: italic;
+  display: block;
+  margin-block-start: 1em;
+}
+
+.btn-nav {
+  appearance: auto;
+  -webkit-writing-mode: horizontal-tb !important;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  background: #ffb300;
+  font-size: 1rem;
+  color: #212121;
+  padding: 0.7rem 0.9rem;
+  margin: 0.5rem 0;
+  transition: 0.4s;
+}
+
+.link-nav {
+  color: rgb(255, 179, 0);
+  cursor: pointer;
+  display: inline;
+  font-family: -apple-system, "system-ui", "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+  height: auto;
+  // line-height 30px;
+  overflow-wrap: break-word;
+  text-decoration-color: rgb(255, 179, 0);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: auto;
+  width: auto;
+  word-break: break-word;
+}
+.link-nav:hover {
+  text-decoration: none;
+  color: rgb(255, 179, 0);
+}
