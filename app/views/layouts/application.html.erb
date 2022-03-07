@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ModalBootsrap</title>
+    <title>Hotwire Modal Bootsrap</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,5 +12,6 @@
 
   <body class="container mt-4">
     <%= yield %>
+    <%= turbo_frame_tag :remote_modal, target: "_top" %>
   </body>
 </html>

@@ -1,12 +1,16 @@
-<div id="<%= dom_id product %>">
-  <p>
-    <strong>Name:</strong>
+<tr id="<%= dom_id(product) %>">
+  <td>
     <%= product.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
+  </td>
+  <td>
     <%= product.description %>
-  </p>
-
-</div>
+  </td>
+  <td class="table-links">
+    <%= link_to "Edit", edit_product_path(product),
+                        class: "me-2 btn btn-sm btn-outline-primary",
+                        data: { turbo_frame: :remote_modal } %>
+    <%= button_to "Delete", product, method: :delete,
+                        class: "btn btn-sm btn-outline-danger",
+                        form: { data: { turbo_confirm: "Are you sure?" } } %>
+  </td>
+</tr>
