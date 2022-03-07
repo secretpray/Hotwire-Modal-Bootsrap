@@ -10,7 +10,7 @@ Product.destroy_all
 puts 'Create new records'
 puts '*' * 80
 
-MAX_PODUCTS = 21
+MAX_PODUCTS = 70
 
 print '.'
 

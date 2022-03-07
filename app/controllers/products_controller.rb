@@ -2,7 +2,10 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
   def index
-    @products = Product.recent
+    respond_to do |format|
+      format.html { @pagy, @products = pagy_countless(Product.all) }
+      format.turbo_stream { @pagy, @products = pagy_countless(Product.all) }
+    end
   end
 
   def show; end

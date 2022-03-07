@@ -1,0 +1,7 @@
+<%= turbo_stream.append "product-list" do %>
+  <%= render partial: "products/product", collection: @products %>
+<% end %>
+
+<%= turbo_stream.replace "pagination" do %>
+  <%= turbo_frame_tag "pagination", src: products_path(page: @pagy.next, format: :turbo_stream), loading: :lazy %>
+<% end %>

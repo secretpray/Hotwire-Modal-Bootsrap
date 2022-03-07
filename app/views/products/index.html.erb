@@ -8,12 +8,15 @@
 <table class="table" id="products">
   <thead>
     <tr>
+      <th>#</th>
       <th>Name</th>
       <th>Description</th>
       <th></th>
     </tr>
   </thead>
-  <tbody>
-    <%= render @products %>
+  <tbody id='product-list'>
+    <%#= render @products %>
   </tbody>
 </table>
+
+<%= turbo_frame_tag "pagination", src: products_path(format: :turbo_stream), loading: :lazy %>
