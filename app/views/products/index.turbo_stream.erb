@@ -1,7 +1,7 @@
-<%= turbo_stream.append "product-list" do %>
+<%= turbo_stream.append "products-list" do %>
   <%= render partial: "products/product", collection: @products %>
 <% end %>
 
-<%= turbo_stream.replace "pagination" do %>
-  <%= turbo_frame_tag "pagination", src: products_path(page: @pagy.next, format: :turbo_stream), loading: :lazy %>
+<%= turbo_stream.update "pagination" do %>
+  <%== pagy_next_link(@pagy, link_extra: 'data-controller="infinite-scroll"') unless @pagy.page == @pagy.last %>
 <% end %>

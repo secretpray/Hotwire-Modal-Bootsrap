@@ -4,11 +4,13 @@ import { Modal } from "bootstrap"
 // Connects to data-controller="remote-modal"
 export default class extends Controller {
   connect() {
+    console.log('connect: ', this.element)
     this.modal = new Modal(this.element)
     this.modal.show()
   }
 
   hideBeforeRender(event) {
+    console.log('disconnect: ', this.element)
     if (this.isOpen()) {
       event.preventDefault()
       this.element.addEventListener('hidden.bs.modal', event.detail.resume)

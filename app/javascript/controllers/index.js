@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import InfiniteScrollController from "./infinite_scroll_controller.js"
+application.register("infinite-scroll", InfiniteScrollController)
+
 import RemoteModalController from "./remote_modal_controller.js"
 application.register("remote-modal", RemoteModalController)

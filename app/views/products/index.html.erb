@@ -14,9 +14,11 @@
       <th></th>
     </tr>
   </thead>
-  <tbody id='product-list'>
-    <%#= render @products %>
+  <tbody id='products-list'>
+    <%= render @products %>
   </tbody>
 </table>
 
-<%= turbo_frame_tag "pagination", src: products_path(format: :turbo_stream), loading: :lazy %>
+<div id="pagination">
+  <%== pagy_next_link(@pagy, link_extra: 'data-controller="infinite-scroll"') unless @pagy.page == @pagy.last %>
+</div>
