@@ -1,6 +1,6 @@
 <% if @product.errors.any? %>
   <%= turbo_stream.replace :remote_modal do %>
-    <%= render 'shared/remote_modal', title: "Edit product" do %>
+    <%= render 'shared/remote_modal', title: "New product" do %>
       <%= render "form", product: @product %>
     <% end %>
   <% end %>

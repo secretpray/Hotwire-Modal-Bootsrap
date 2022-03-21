@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AutohideController from "./autohide_controller.js"
+application.register("autohide", AutohideController)
+
 import InfiniteScrollController from "./infinite_scroll_controller.js"
 application.register("infinite-scroll", InfiniteScrollController)
 

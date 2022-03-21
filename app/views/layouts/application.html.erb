@@ -10,8 +10,12 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="container mt-4">
+  <body class="min-vh-100 container antialiased font-normal leading-normal mt-0">
+    <div id='notifications'>
+      <%= render 'shared/flash' %>
+    </div>
     <%= yield %>
-    <%= turbo_frame_tag :remote_modal, target: "_top" %>
+    <%#= turbo_frame_tag :remote_modal, target: "_top" %>
+    <%= turbo_frame_tag :remote_modal %>
   </body>
 </html>

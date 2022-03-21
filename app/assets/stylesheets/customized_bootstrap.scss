@@ -4,6 +4,19 @@ $btn-close-white-filter: invert(19%) sepia(96%) saturate(7453%) hue-rotate(359de
   cursor: pointer;
 }
 
+.text-teal {
+  color: #17a2b8;
+}
+
+.btn-primary {
+  background-color: #17a2b8 !important;
+  border-color: #17a2b8 !important;
+}
+  
+.not-allowed {
+  cursor: not-allowed! important;
+}
+
 .form-error {
   color: var(--bs-red);
 }

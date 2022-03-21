@@ -1,22 +1,16 @@
-<%= turbo_stream_from :products %>
-
+<%= turbo_stream_from 'products' %>
 
 <% unless @products.present? %>
-  <div class="min-vh-100 w-100 d-flex justify-content-center align-items-center d-flex flex-column">
+  <div class="min-vh-100 w-100 d-flex justify-content-center align-items-center">
     <h2 class="font-bold text-4xl text-center w-100 inline-block text-teal">
       No products to display! Do you want to add?
     </h2>
-    <div class='mt-3'>
-      <%= link_to "Create product", new_product_path, class: "btn btn-primary",
-                  data: { turbo_frame: :remote_modal } %>
-    </div>
-    
   <div>
 <% else %>
-  <%= turbo_frame_tag :products do %>
+  <%= turbo_frame_tag 'products-list' do %>
     <div class="products-header">
       <h1>
-        <%= link_to 'Products', root_path, class: 'text-decoration-none text-reset' %> 
+        <%= link_to 'Products', root_path, class: '' %>
       </h1>
       <div>
         <%= link_to "New product", new_product_path, class: "btn btn-primary",
@@ -32,7 +26,7 @@
           <th></th>
         </tr>
       </thead>
-      <tbody id='products_list'>
+      <tbody id='products'>
         <%= render @products %>
       </tbody>
     </table>

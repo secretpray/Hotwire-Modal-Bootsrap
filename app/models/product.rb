@@ -10,4 +10,18 @@ class Product < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
   # scope :recent, -> { order(id: :desc) }
+  
+  after_create_commit do 
+    broadcast_prepend_later_to(:products, target: 'products_list')
+    # broadcast_prepend_to(:products, target: 'products_list')
+  end
+
+  after_update_commit do
+    broadcast_replace_later_to(:products, target: self)
+    # broadcast_update_to(:products, target: 'products_list')
+  end
+
+  after_destroy_commit do
+    broadcast_remove_to :products
+  end
 end

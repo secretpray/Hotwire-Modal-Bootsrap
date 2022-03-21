@@ -1,4 +1,8 @@
-<%= form_with model: product do |f| %>
+<% uniq_id = product.new_record? ? dom_id(product) : "form_#{dom_id(product)}" %>
+<%= form_with model: product, 
+              id: uniq_id,
+              data: { action: "turbo:submit-end->remote-modal#removeModal" }, target: :_top do |f| %>
+<%#= form_with model: product, data: { turbo_frame: :_top } do |f| %>
   <div class="mb-3">
     <%= f.label :name, class: "form-label" %>
     <%= f.text_field :name, class: "form-control" %>
@@ -11,6 +15,8 @@
   </div>
   <div class="mb-3">
     <%= f.button class: "btn btn-primary" %>
-    <%= link_to "Cancel", products_path, class: "btn btn-outline-secondary" %>
+    <%= link_to "Cancel", "javascript:void(0)", 
+                            class: "btn btn-outline-secondary",  
+                              data: { action: 'click->remote-modal#removeModal' } %>
   </div>
 <% end %>
