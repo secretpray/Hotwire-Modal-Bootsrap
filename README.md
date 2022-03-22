@@ -8,8 +8,21 @@ git clone git@github.com:secretpray/Hotwire-Modal-Bootsrap.git
 ```
 
 ```bash
+cd Hotwire-Modal-Bootsrap
+```
+
+```bash
 bin/setup
 ```
+
+```bash
+bin/rails db:create db:migrate db:seed
+```
+
+```bash
+yarn install --check-files
+```
+
 ### Start
 
 ```bash
