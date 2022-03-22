@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   dismiss() {
-    this.closeTarget.click()
+    this.closeTarget.click() 
     // this.element.remove()
   }
 }

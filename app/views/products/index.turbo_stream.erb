@@ -1,7 +1,7 @@
-<% <%= turbo_stream.append "products-list" do %>
+<%= turbo_stream.append "products_list" do %>
   <%= render partial: "products/product", collection: @products %>
 <% end %>
 
-<% <%= turbo_stream.update "pagination" do %>
+<%= turbo_stream.update "pagination" do %>
   <%== pagy_next_link(@pagy, link_extra: 'data-controller="infinite-scroll"') unless @pagy.page == @pagy.last %>
-<% end %> 
+<% end %>

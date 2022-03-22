@@ -1,6 +1,5 @@
 <%= turbo_stream_from :products %>
 
-
 <% unless @products.present? %>
   <div class="min-vh-100 w-100 d-flex justify-content-center align-items-center d-flex flex-column">
     <h2 class="font-bold text-4xl text-center w-100 inline-block text-teal">
@@ -13,32 +12,30 @@
     
   <div>
 <% else %>
-  <%= turbo_frame_tag :products do %>
-    <div class="products-header">
-      <h1>
-        <%= link_to 'Products', root_path, class: 'text-decoration-none text-reset' %> 
-      </h1>
-      <div>
-        <%= link_to "New product", new_product_path, class: "btn btn-primary",
-        data: { turbo_frame: :remote_modal } %>
-      </div>
+  <div class="products-header" id='products'>
+    <h1>
+      <%= link_to 'Products', root_path(only_path: true), class: 'text-decoration-none text-reset fs-2 title-list' %>
+    </h1>
+    <div>
+      <%= link_to "New product", new_product_path, class: "btn btn-primary",
+      data: { turbo_frame: :remote_modal } %>
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id='products_list'>
-        <%= render @products %>
-      </tbody>
-    </table>
-
-    <div id="pagination">
-      <%== pagy_next_link(@pagy, link_extra: 'data-controller="infinite-scroll"') unless @pagy.page == @pagy.last %>
-    </div>
-  <% end %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id='products_list'>
+      <%= render @products %>
+    </tbody>
+  </table>
+  
+  <div id="pagination">
+    <%== pagy_next_link(@pagy, link_extra: 'data-controller="infinite-scroll"') unless @pagy.page == @pagy.last %>
+  </div>
 <% end %>
