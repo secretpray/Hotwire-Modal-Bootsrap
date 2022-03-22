@@ -16,10 +16,6 @@ bin/setup
 ```
 
 ```bash
-bin/rails db:create db:migrate db:seed
-```
-
-```bash
 yarn install --check-files
 ```
 
